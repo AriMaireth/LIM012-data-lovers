@@ -6,15 +6,63 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+  <header>
 
-    </header>
-    <main>
-    <div id="root"></div>
+    <div id="logo" class="logo">
+      <h1><img class="pokemon" src="imagen/pokemon-logo.png" alt="">
+      <img class="go" src="imagen/go-logo.png" alt=""></h1>
+    </div>
+
+    <div class="filterOptions"></div>
+      <nav >
+        <ul class="navUl" >
+          <li  id= "types"class= "types"><a href=""> Tipos de Pokemones</a>
+            <ul class="subMenu" id="subMenu">
+              <li class="subMenu"><button id="water">AGUA</button></li>
+              <li class="subMenu"><button id="bug">BICHO</a></li>
+              <li class="subMenu"><button id="fire">FUEGO</a></li>
+              <li class="subMenu"><button id="grass">PLANTA</a></li>
+              <li class="subMenu"><button id="normal">COMÚN</a></li>
+              <li class="subMenu"><button id="poison">VENENOSO</a></li>
+              <li class="subMenu"><button id="electric">ELÉCTRICO</a></li>
+              <li class="subMenu"><button id="ground">TIERRA</a></li>
+              <li class="subMenu"><button id="fighting">LUCHA</a></li>
+              <li class="subMenu"><button id="psychic">PSÍQUICO</a></li>
+              <li class="subMenu"><button id="ghost">FANTASMA</a></li>
+              <li class="subMenu"><button id="flying">VOLADOR</a></li>
+              <li class="subMenu"><button id="fairy">HADA</a></li>
+              <li class="subMenu"><button id="dragon">DRAGÓN</a></li>
+              <li class="subMenu"><button id="dark">OSCURIDAD</a></li>
+              <li class="subMenu"><button id="rock">ROCA</a></li>
+              <li class="subMenu"><button id="all">TODOS</a></li>
+            </ul>
+          </li>
+          <li  class="types" ><a href="">Top 5 mejor ataque</a></li>
+          <li  class="types" ><a href="">Top 5 más resistentes</a></li>
+        </ul>
+        <input type="search" class="searchBar" id="searchBar">
+      </nav>
+
+  </header> 
+
+  <main>
+    <section id="selectOrder">
+      <div>
+        <select >
+          <option selected id="OrdenarPor" value="OrdenarPor">Ordenar por</option>
+          <option value="a-z" id = 'a-z'>A-Z</option>
+          <option value="z-a" id = 'z-a'>Z-A</option>
+        </select> 
+      </div>
+    </section>
+    <section id="firstPage">  
+      <div id="firstViewPokemons">    
+      </div>
+    </section>
+    <section id="secondPage">
+      <div id="pokemonTypes"></div>  
+    </section>
   </main>
-  <footer>
-    
-  </footer>
     <script src="main.js" type="module"></script>
   </body>
 </html>

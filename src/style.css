@@ -1,4 +1,177 @@
-*{margin:0; padding: 0;}
-body{
-    background-image: url(img/background-pokemon.jpg);
-}
+
+*{
+    margin:0;
+    padding: 0;
+  }
+
+  body{
+    background-image: url(imagen/fondopokemoncopia.jpg);
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-position: bottom; 
+    vertical-align: middle;
+     background-size: cover;
+    
+  }
+
+  h1{
+    display: inline-flex;
+    position: absolute; 
+    top: 2%;
+    left: 30%;
+    right: 10%;
+  }
+  .pokemon{
+    height: 130px; 
+    width: 360px; 
+  }
+  .go{
+    height: 80px; 
+    width: 170px; 
+  } 
+
+  nav{
+   margin-top:15%;
+  }
+  
+  nav ul {
+  list-style: none;
+  display: table;
+  }
+  nav li{
+    position: relative;
+  }
+
+  nav a{
+    text-decoration: none;
+  }
+ nav li ul{
+   transition: all 0.5s;
+ }
+ 
+  nav > ul > li{
+    float: left;
+    background: white;
+    border:6px solid rgba(16, 114, 206, 0.671);
+    padding:9px 9px;
+    border-radius: 30px;
+    color: #25391D; 
+    text-align: center;
+    margin-left: 50px;
+  }
+
+  nav li:hover{
+    cursor:pointer;
+    background: white;
+    padding: 11px 11px;
+    border-radius: 30px;
+    color: #25391D; 
+    transition: all 0.5s;
+  }
+
+  nav > ul> li > ul{
+    position: absolute;
+    background: white;
+    border-radius: 30px;
+    margin-top: 50%;
+    padding:2px 40px;
+    margin-left: -55px;
+    border:6px solid rgba(16, 114, 206, 0.671);
+  }
+
+  nav li li{
+    color: #25391D; 
+    text-align: center;
+    
+  }
+  nav button{
+    background: transparent;
+    border: 0;
+    color: #25391D;
+    cursor:pointer;
+    line-height: 30px;
+  }
+
+  nav li li:hover{
+    border:6px solid rgba(16, 114, 206, 0.671);
+    padding:9px 9px;
+    border-radius: 30px;
+  }
+  
+
+  .searchBar{
+    display: inline-block; 
+    background: white; 
+    border-radius: 30px; 
+    padding: 8px 8px;
+    border:none;
+    position: absolute; 
+    right: 5%; top: 28%;
+  }
+
+  main{
+    display: flex; 
+    justify-content: left; 
+    position: absolute; 
+    top: 45%;
+    margin-left: 15%;
+  }
+
+  .allPokemons{
+    text-align: center; 
+    padding: 4px; 
+    position: relative ; 
+    display: inline-flex;
+    background-color: white; 
+    border-radius: 30px; 
+    border:6px solid rgba(16, 114, 206, 0.671);
+    margin: 30px 20px; 
+  }
+
+  .allPokemons li{
+    text-decoration: none; 
+    list-style: none;
+  }
+  .waterPokemon{
+    text-align: center; 
+    padding: 4px; 
+    position: relative ; 
+    display: inline-flex;
+    background-color: white; 
+    border-radius: 30px; 
+    border:6px solid rgba(16, 114, 206, 0.671);
+    margin: 30px 20px; 
+  }
+  .waterPokemon li{
+    text-decoration: none; 
+    list-style: none;
+  }
+
+  
+   @media(max-width:768px){
+     header label{
+       display: block;
+     }
+
+     .menu{
+       position: absolute;
+       flex-direction: column;
+       background: rgba(16, 114, 206, 0.671);
+       border-radius: 30px; padding: 5px 20px;
+       height: 35%; margin-left: -70%;
+       
+       
+     }
+
+     .menu li a{
+       margin: 10px 0px;
+       display: flex;
+       flex-direction: column;
+     }
+
+     #dropdown:checked~ .menu {
+      margin: 0;
+      transition: all 0.5s;
+       
+     }
+   }
