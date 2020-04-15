@@ -1,12 +1,19 @@
 // estas funciones son de ejemplo
-export const filtrarProductoPorValor = (array, number, orden) => {
+export const orderAZ = (ordenar, condition) => {
+  if (condition === 'a-z') {
+    ordenar.sort((a, b) => ((a.name > b.name) ? -1 : 1));
+  } else {
+    ordenar.sort((a, b) => ((a.name < b.name) ? -1 : 1));
+  }
+};
+/* export const filtrarProductoPorValor = (array, number, orden) => {
     const newArray = [];
     
     
         if(array[i].valor > number){
           newArray.push(array[i])
         }
-      }
+     
    
       if(orden === 'menor'){
         if(array[i].valor < number){
@@ -14,7 +21,7 @@ export const filtrarProductoPorValor = (array, number, orden) => {
         }
       }
      
-    }
+    
     return newArray
   }
   
@@ -56,10 +63,7 @@ export const filtrarProductoPorValor = (array, number, orden) => {
     firstViewPokemons.innerHTML= allPokemons;
     return
   }
-  
+  */
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-  
-  
-  
   
   

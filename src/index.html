@@ -40,7 +40,9 @@
           <li  class="types" ><a href="">Top 5 mejor ataque</a></li>
           <li  class="types" ><a href="">Top 5 más resistentes</a></li>
         </ul>
-        <input type="search" class="searchBar" id="searchBar">
+        <div id= "searchWrapper">
+          <input type="search" class="searchBar" id="searchBar">
+        </div>
       </nav>
 
   </header> 
@@ -48,13 +50,16 @@
   <main>
     <section id="selectOrder">
       <div>
-        <select >
-          <option selected id="OrdenarPor" value="OrdenarPor">Ordenar por</option>
+        <select id="OrdenarPor" value="OrdenarPor">
+          <option selected value=" ">Ordenar por</option>
           <option value="a-z" id = 'a-z'>A-Z</option>
           <option value="z-a" id = 'z-a'>Z-A</option>
         </select> 
       </div>
     </section>
+    <section>
+      <div id="pagina1"> </div>  
+     </section>
     <section id="firstPage">  
       <div id="firstViewPokemons">    
       </div>
