@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import data from './data/pokemon/pokemon.js';
 
 const pokemon = Object.values(data.pokemon);
@@ -9,29 +10,9 @@ const firstPage = document.getElementById('firstPage');
 const secondPage = document.getElementById('secondPage');
 const pokemonTypes = document.getElementById('pokemonTypes');
 const searchBar = document.getElementById('searchBar');
-// constantes de Sort()
-const ordenarPor = document.querySelectorAll('ordenarPor');
-const primeraOpcion = document.getElementById('primeraOpcion');
-const orderfromAtoZ = document.getElementById('a-z');
-const orderfromZtoA = document.getElementById('z-a');
-// constantes de los tipos de pokemon
-const water = document.getElementById('water');
-const bug = document.getElementById('bug');
-const grass = document.getElementById('grass');
-const fire = document.getElementById('fire');
-const normal = document.getElementById('normal');
-const poison = document.getElementById('poison');
-const electric = document.getElementById('electric');
-const ground = document.getElementById('ground');
-const fighting = document.getElementById('fighting');
-const psychic = document.getElementById('psychic');
-const ghost = document.getElementById('ghost');
-const dragon = document.getElementById('dragon');
-const flying = document.getElementById('flying');
-const fairy = document.getElementById('fairy');
-const rock = document.getElementById('rock');
-const dark = document.getElementById('dark');
+const selectOptionsDirections = document.querySelector('#ordenarPor');
 /* const all = document.getElementById('all');
+
 
  mostrar mi data en pantalla */
 let allPokemons = '';
@@ -47,24 +28,15 @@ Object.values(pokemon).forEach((show) => {
     `;
 });
 firstViewPokemons.innerHTML = allPokemons;
+
 subMenu.style.display = 'none';
 showMeTypes.addEventListener('click', (event) => {
   event.preventDefault();
   subMenu.style.display = 'block';
 });
 
-// buscador
-searchBar.addEventListener('keyup', (e) => {
-  const searchString = e.target.value.toLowerCase();
-  // console.log(searchString)
-  const filtradoCaracteres = pokemon.filter((x) => {
-    return x.name.includes(searchString);
-  });
-  // eslint-disable-next-line no-use-before-define
-  pokemonTypes.innerHTML = iteratingData(filtradoCaracteres);
-});
-
 // funciones para el filtrado
+
 const iteratingData = (pokemonSeleccionado) => {
   let showPokemonTypes = '';
   // eslint-disable-next-line no-plusplus
@@ -83,12 +55,9 @@ const iteratingData = (pokemonSeleccionado) => {
   return showPokemonTypes;
 };
 
-// eslint-disable-next-line func-names
-const selection = function (typePokemon) {
+const selection = (typePokemon) => {
   const pokemonSelected = [];
-  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < pokemon.length; i++) {
-    // eslint-disable-next-line eqeqeq
     if (pokemon[i].type == typePokemon) {
       pokemonSelected.push(pokemon[i]);
     }
@@ -96,102 +65,24 @@ const selection = function (typePokemon) {
   return pokemonSelected;
 };
 
-// filtrado de pokemones
-water.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(water.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
+const listaMenuTipos = document.querySelector('#subMenu');
+listaMenuTipos.addEventListener('click', (event) => {
+  const tipoSeleccionado = event.target.id;
+  const objetosPorTipoSeleccionado = selection(tipoSeleccionado);
+  pokemonTypes.innerHTML = iteratingData(objetosPorTipoSeleccionado);
 });
 
-bug.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(bug.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
+
+
+// buscador
+searchBar.addEventListener('keyup', (e) => {
+  const searchString = e.target.value.toLowerCase();
+  // console.log(searchString)
+  const filtradoCaracteres = pokemon.filter(x => x.name.includes(searchString));
+  pokemonTypes.innerHTML = iteratingData(filtradoCaracteres);
 });
 
-fire.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(fire.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-grass.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(grass.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-normal.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(normal.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-poison.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(poison.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-electric.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(electric.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-ground.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(ground.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-fighting.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(fighting.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-psychic.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(psychic.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-ghost.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(ghost.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-dragon.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(dragon.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-flying.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(flying.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-fairy.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(fairy.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-rock.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(rock.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
-dark.addEventListener('click', (event) => {
-  event.preventDefault();
-  const pokemonSeleccionado = selection(dark.id);
-  pokemonTypes.innerHTML = iteratingData(pokemonSeleccionado);
-});
-
+// Funciones para ordenar con el metodo Sort()
 const orderAZ = (order) => {
   const orderlyAZ = order.sort((a, b) => { return (a.name > b.name) ? 1 : -1;
   });
@@ -199,43 +90,19 @@ const orderAZ = (order) => {
 };
 
 const orderZA = (order) => {
-  const orderlyZA = order.sort((a, b) => { return (a.name < b.name) ? 1 : -1;
-  });
+  const orderlyZA = order.sort((a, b) => ((a.name < b.name) ? 1 : -1));
   return orderlyZA;
 };
-console.log(orderZA(pokemon));
+// console.log(orderZA(pokemon));
 
-ordenarPor.addEventListener('change', (e) => {
-  console.log(e)
+selectOptionsDirections.addEventListener('change', (event) => {
+  const ordenSeleccionado = event.target.value;
+  if (ordenSeleccionado === 'a-z') {
+    const dataOrdenada = orderAZ(pokemon);
+    pokemonTypes.innerHTML = iteratingData(dataOrdenada);
+  }
+  if (ordenSeleccionado === 'z-a') {
+    const dataOrdenada = orderZA(pokemon);
+    pokemonTypes.innerHTML = iteratingData(dataOrdenada);
+  }
 });
-
-// eslint-disable-next-line no-shadow
-/*
-const orderAZ = (ordenar , value) =>{
-  const orderly = ordenar.sort((a,b)=>{
-    if (value === 'a-z') {
-      (a.name > b.name)
-      return 1
-    };
-    if(a.name < b.name){
-      return -1
-    };
-    return 0
-  })
-  return orderly;
-};
-
-
-const orderZA = (ordenar) =>{
-  const orderly = allPokemons.sort(function(a,b){
-    if (a.name < b.name){
-      return 1
-    };
-    if(a.name > b.name){
-      return -1
-    };
-    return 0
-  })
-  return orderly;
-};
- */
