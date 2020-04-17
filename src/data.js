@@ -8,23 +8,17 @@ export const orderAZ = (ordenar, condition) => {
 };
 /* export const filtrarProductoPorValor = (array, number, orden) => {
     const newArray = [];
-    
-    
-        if(array[i].valor > number){
+    if(array[i].valor > number){
           newArray.push(array[i])
         }
-     
-   
       if(orden === 'menor'){
         if(array[i].valor < number){
           newArray.push(array[i])
         }
       }
-     
-    
     return newArray
   }
-  
+
   console.log(filtrarProductoPorValor)
   console.log(dataProductos);
   

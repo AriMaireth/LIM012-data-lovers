@@ -58,6 +58,7 @@ const iteratingData = (pokemonSeleccionado) => {
 const selection = (typePokemon) => {
   const pokemonSelected = [];
   for (let i = 0; i < pokemon.length; i++) {
+    // eslint-disable-next-line eqeqeq
     if (pokemon[i].type == typePokemon) {
       pokemonSelected.push(pokemon[i]);
     }
@@ -72,8 +73,6 @@ listaMenuTipos.addEventListener('click', (event) => {
   pokemonTypes.innerHTML = iteratingData(objetosPorTipoSeleccionado);
 });
 
-
-
 // buscador
 searchBar.addEventListener('keyup', (e) => {
   const searchString = e.target.value.toLowerCase();
@@ -84,8 +83,7 @@ searchBar.addEventListener('keyup', (e) => {
 
 // Funciones para ordenar con el metodo Sort()
 const orderAZ = (order) => {
-  const orderlyAZ = order.sort((a, b) => { return (a.name > b.name) ? 1 : -1;
-  });
+  const orderlyAZ = order.sort((a, b) => ((a.name > b.name) ? 1 : -1));
   return orderlyAZ;
 };
 
@@ -93,7 +91,6 @@ const orderZA = (order) => {
   const orderlyZA = order.sort((a, b) => ((a.name < b.name) ? 1 : -1));
   return orderlyZA;
 };
-// console.log(orderZA(pokemon));
 
 selectOptionsDirections.addEventListener('change', (event) => {
   const ordenSeleccionado = event.target.value;
