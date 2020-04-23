@@ -13,10 +13,10 @@
       <img class="go" src="imagen/go-logo.png" alt=""></h1>
     </div>
 
-    <div class="filterOptions"></div>
+    <div class="filterOptions" id="filterOptions">
       <nav >
         <ul class="navUl" >
-          <li  id= "types"class= "types"><a href=""> Tipos de Pokemones</a>
+          <li  id= "types" class= "types">Tipos de Pokemones
             <ul class="subMenuUl" id="subMenu">
               <li class="subMenu" id="water">AGUA</li>
               <li class="subMenu" id="bug">BICHO</li>
@@ -37,25 +37,23 @@
               <li class="subMenu" id="all">TODOS</li>
             </ul>
           </li>
-          <li  class="types" ><a href="">Top 5 mejor ataque</a></li>
-          <li  class="types" ><a href="">Top 5 más resistentes</a></li>
+          <li id="topAttack" class="types" >Top 5 mejor ataque</li>
+          <li id="topResistance" class="types" >Top 5 más resistentes</li>
         </ul>
         <div id= "searchWrapper">
           <input type="search" class="searchBar" id="searchBar">
         </div>
       </nav>
-
+    </div>
   </header> 
 
   <main>
-    <section id="selectOrder">
-      <div>
+    <section id="selectOrder" class ="selectOrder">
         <select id="ordenarPor" value="ordenarPor">
           <option selected value=" ">Ordenar por</option>
-          <option value="a-z" id = 'a-z'>A-Z</option>
-          <option value="z-a" id = 'z-a'>Z-A</option>
+          <option value="a-z" id = "a-z">A-Z</option>
+          <option value="z-a" id = "z-a">Z-A</option>
         </select> 
-      </div>
     </section>
     <section>
       <div id="pagina1"> </div>  

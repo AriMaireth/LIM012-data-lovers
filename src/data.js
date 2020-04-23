@@ -1,63 +1,41 @@
-// estas funciones son de ejemplo
-export const orderAZ = (ordenar, condition) => {
-  if (condition === 'a-z') {
-    ordenar.sort((a, b) => ((a.name > b.name) ? -1 : 1));
-  } else {
-    ordenar.sort((a, b) => ((a.name < b.name) ? -1 : 1));
-  }
+
+export const orderAZ = (order) => {
+  const orderlyAZ = order.sort((a, b) => ((a.name > b.name) ? 1 : -1));
+  return orderlyAZ;
 };
-/* export const filtrarProductoPorValor = (array, number, orden) => {
-    const newArray = [];
-    if(array[i].valor > number){
-          newArray.push(array[i])
-        }
-      if(orden === 'menor'){
-        if(array[i].valor < number){
-          newArray.push(array[i])
-        }
-      }
-    return newArray
+
+export const orderZA = (order) => {
+  const orderlyZA = order.sort((a, b) => ((a.name < b.name) ? 1 : -1));
+  return orderlyZA;
+};
+
+
+export const selection = (pokemon, typePokemon) => {
+  const pokemonSelected = [];
+  for (let i = 0; i < pokemon.length; i += 1) {
+    // eslint-disable-next-line eqeqeq
+    if (pokemon[i].type.includes(typePokemon)) {
+      pokemonSelected.push(pokemon[i]);
+    }
   }
+  return pokemonSelected;
+};
 
-  console.log(filtrarProductoPorValor)
-  console.log(dataProductos);
-  
-  const inputDelValor = document.getElementById('valorcito');
-  const inputDelOrden = document.getElementById('ordencito');
-  const botonConsultar = document.getElementById('btn-consultar');
-  
-  botonConsultar.addEventListener('click', () => {
-     const valorUsuario = parseInt(inputDelValor.value);
-     const ordenUsuario = inputDelOrden.value;
-     const resultado = filtrarProductoPorValor(dataProductos, valorUsuario, ordenUsuario)
-     let stringTempalte = '';
-     for(let i = 0; i < resultado.length; i++){
-      stringTempalte += `<div>${resultado[i].nombre}</div>
-                        <div>${resultado[i].valor}</div>`
-     }
-  
-     document.getElementById('mostrar-productos').innerHTML = stringTempalte
-  })
-
-
-  const viewAll = function name(params) {
-    const firstViewPokemons = document.getElementById('firstViewPokemons');
-    let allPokemons= '';
-    pokemon.forEach(show =>{
-      allPokemons += `
-      <div id="allPokemons" class="allPokemons">
-      <ul>
-      <li>${show.num}</li>
-      <li><img src="${show.img}"</li>
-      <li>${show.name}</li>
-      </ul>
-      </div>
-      `
-    });
-    firstViewPokemons.innerHTML= allPokemons;
-    return
-  }
-  */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-  
-  
+export const calculateStats = (element) => {
+  const newData = [];
+  element.forEach((x) => {
+    const name = x.name;
+    const img = x.img;
+    const num = x.num;
+    const attack = x.stats['base-attack'];
+    const defense = x.stats['base-defense'];
+    const stamina = x.stats['base-stamina'];
+    // eslint-disable-next-line radix
+    const average = ((parseInt(attack) + parseInt(defense) + parseInt(stamina)) / 3).toFixed(2);
+    const object = {
+      name, img, num, average,
+    };
+    newData.push(object);
+  });
+  return newData;
+};
